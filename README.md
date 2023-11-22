@@ -11,9 +11,10 @@
 # Performing Advanced Capacity Analytics with Azure DevOps
 
 Azure DevOps provides the ability to set and analyze capacity for teams and team members [within sprint](https://learn.microsoft.com/en-us/azure/devops/boards/sprints/set-capacity?view=azure-devops) and at a [summarized level across teams](https://learn.microsoft.com/en-us/azure/devops/report/dashboards/widget-catalog?view=azure-devops#sprint-capacity-widget). However, there are times when you may want to perform more advanced analytics on capacity data, such as viewing capacity at a more granular level within a project, or across multiple projects. Using the Azure DevOps [Capacities APIs](https://learn.microsoft.com/en-us/rest/api/azure/devops/work/capacities/list?view=azure-devops-rest-6.0&viewFallbackFrom=azure-devops-rest-7.1&tabs=HTTP), you can retrieve capacity data and perform advanced analytics on it.
-<br>
+
 This codebase provides a demonstration of how to retrieve capacity data from the Azure DevOps Capacities API and visualize it in Power BI. A conceptual approach to automating the process for an enterprise setup is also provided.
-<br>
+
+
 The scenario presented in this codebase is simple not intended for production use, and should be viewed as a foundation for modification and expansion into more complex applications.
 
 ## Prerequisites
