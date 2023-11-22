@@ -29,6 +29,10 @@ The scenario presented in this codebase is simple not intended for production us
 
 ![Diagram](./docs/images/automated-solution.png)
 
+1. An Azure Function is triggered on a schedule (e.g. daily) to retrieve capacity data from the Azure DevOps Capacities API.
+2. The Azure Function stores the capacity data in an Azure SQL Database.
+3. A Power BI report is connected to the Azure SQL Database and visualizes the capacity data.
+
 ## Potential Business Use Cases
 
 - There are multiple use cases for performing cross-project capacity analytics. For example:
