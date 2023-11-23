@@ -2,9 +2,9 @@
 
 ---
 
-| Page Type | Languages | Key Services | Tools    |
-| --------- | --------- | ------------ | -------- |
-| Sample    | Python    | Azure DevOps | Power BI |
+| Page Type | Languages | Key Services                                              | Tools    |
+| --------- | --------- | --------------------------------------------------------- | -------- |
+| Sample    | Python    | Azure DevOps <br> Azure Functions <br> Azure SQL Database | Power BI |
 
 ---
 
