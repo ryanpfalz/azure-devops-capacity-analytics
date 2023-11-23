@@ -48,7 +48,7 @@ This sample assumes you are running the code and viewing the report locally.
 - The `main` function shows an example of how to call the `generate_snapshot` function for multiple parameter sets. Assuming that the code to pull the data is automated, you may opt to further parameterize the script to allow for more flexibility how the parameters are passed in (e.g., from a querystring).
 - Additional code to connect to a database and store the data is not included in this codebase - outputs are simply written to a CSV. Code to connect to a database can be added as part of an enterprise solution.
 
-Note that this codebase will likely require modification to fit your specific needs, and requires sufficient testing to ensure expected results behavior.
+Note that this codebase will likely require modification to fit your specific needs, and requires sufficient testing to ensure expected results behavior. Areas in the codebase that may require modification are called out with TODO comments.
 
 #### Authentication to Azure DevOps
 

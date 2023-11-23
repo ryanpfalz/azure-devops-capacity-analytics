@@ -216,6 +216,7 @@ def generate_snapshot(organization, project, team, target_sprint_name, pat):
 
 
 def main():
+    # TODO handle multiple PATs
     # read PAT from environment variable
     pat = os.environ['AZDO_PAT']
 
@@ -226,6 +227,7 @@ def main():
 
     combined_df = pd.concat(snapshot_dataframes)
 
+    # TODO export to a database
     # save snapshot to csv
     combined_df.to_csv(f'snapshot.csv', index=False)
 
