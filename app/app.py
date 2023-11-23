@@ -15,8 +15,6 @@ WORKING_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 # - int: The number of working days in the sprint if the sprint is found and has valid start and finish dates.
 # - str: A message indicating missing dates or that the sprint was not found.
 def get_days_in_sprint(sprint_name, data):
-    ...
-def get_days_in_sprint(sprint_name, data):
     for sprint in data['value']:
         if sprint['name'].lower() == sprint_name.lower():
             if sprint['attributes']['startDate'] and sprint['attributes']['finishDate']:
@@ -45,7 +43,7 @@ def get_days_in_sprint(sprint_name, data):
 # Returns:
 # - list: A list of dictionaries with each team member's name, total sprint hours, and remaining sprint hours.
 # - None: If the sprint is not found.
-# TODO review/refactor to account for days off?
+# TODO review functionality that accounts for days off
 def get_team_member_availability(sprint_data, team_members_data, sprint_name, remaining_availability=False):
     for sprint in sprint_data['value']:
         if sprint['name'] == sprint_name:
