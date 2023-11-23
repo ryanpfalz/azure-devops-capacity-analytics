@@ -7,6 +7,15 @@ import os
 WORKING_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
 
+# Description: Calculates the number of working days in a given sprint.
+# Parameters:
+# - sprint_name (str): The name of the sprint.
+# - data (dict): The sprint data.
+# Returns:
+# - int: The number of working days in the sprint if the sprint is found and has valid start and finish dates.
+# - str: A message indicating missing dates or that the sprint was not found.
+def get_days_in_sprint(sprint_name, data):
+    ...
 def get_days_in_sprint(sprint_name, data):
     for sprint in data['value']:
         if sprint['name'].lower() == sprint_name.lower():
@@ -27,8 +36,15 @@ def get_days_in_sprint(sprint_name, data):
     return "Sprint not found."
 
 
-# when remaining_availability is True, the function will return the remaining availability based on the current date
-# otherwise, it will return the total availability for the sprint
+# Description: Calculates the total and remaining sprint hours for each team member.
+# Parameters:
+# - sprint_data (dict): The sprint data.
+# - team_members_data (dict): The team members data.
+# - sprint_name (str): The name of the sprint.
+# - remaining_availability (bool): Flag to calculate remaining availability. Default is False.
+# Returns:
+# - list: A list of dictionaries with each team member's name, total sprint hours, and remaining sprint hours.
+# - None: If the sprint is not found.
 # TODO review/refactor to account for days off?
 def get_team_member_availability(sprint_data, team_members_data, sprint_name, remaining_availability=False):
     for sprint in sprint_data['value']:
@@ -88,6 +104,12 @@ def get_team_member_availability(sprint_data, team_members_data, sprint_name, re
     return user_info
 
 
+# Description: Updates the 'currently_assigned' hours for each team member in the availability_dict based on the work_items_list.
+# Parameters:
+# - availability_dict (list): A list of dictionaries representing team members and their available hours.
+# - work_items_list (dict): A dictionary containing work items with assigned hours and assignees.
+# Returns:
+# - list: The updated availability_dict with 'currently_assigned' hours for each team member.
 def get_hours_assigned(availability_dict, work_items_list):
     # Initialize 'currently_assigned' to 0 for each item in availability_dict
     for item in availability_dict:
@@ -109,10 +131,18 @@ def get_hours_assigned(availability_dict, work_items_list):
     return availability_dict
 
 
+# Description: Generates a snapshot of the current state of a sprint including team member availability and work items.
+# Parameters:
+# - organization (str): The name of the organization.
+# - project (str): The name of the project.
+# - team (str): The name of the team.
+# - target_sprint_name (str): The name of the target sprint.
+# - pat (str): Personal Access Token for API authentication.
+# Returns:
+# - DataFrame: A pandas DataFrame containing the snapshot data.
 def generate_snapshot(organization, project, team, target_sprint_name, pat):
-    # construct snapshot by sprint/team/project/org
 
-    # TODO build a table/dataframe and add this data in last (for each row) - needed for PBI
+    # construct snapshot by sprint/team/project/org
     snapshot = {
         'sprint': target_sprint_name,
         'team': team,
