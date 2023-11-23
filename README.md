@@ -35,7 +35,12 @@ This sample assumes you are running the code and viewing the report locally.
 4. In the `main` function of `app.py`, modify the `generate_snapshot` function call(s) to pass in your Organization, Project, Team, and Sprint.
 5. Run `pip install -r requirements.txt` to install the required Python packages.
 6. Run `python app.py` to generate a CSV file containing capacity data for the specified Organization, Project, Team, and Sprint.
-7. Import the CSV file into Power BI and visualize the data. You may open the data in the provided Power BI template (`pbi/capacity-template.pbix`) to see an example of how to visualize the data.
+7. Import the CSV file into Power BI and visualize the data.
+
+   - You may build a dashboard that meets your specific needs, but some ideas to include in your dashboard include:
+   - A gauge chart that displays the currently assigned hours against the remaining hours in the sprint.
+   - A row-selectable table which shows Sprints, Teams, and Organizations in the data model, so you can choose to filter the dashboard down to a any level of granularity and view how fully utilized Sprints, Teams, and Organizations are.
+   - A row-selectable table showing the currently assigned hours for each team member in the data model, so you can choose to filter the dashboard down to the user level across Teams/Organizations.
 
 #### Modifying `app.py` to modify for your use case
 
@@ -53,6 +58,8 @@ Note that this codebase will likely require modification to fit your specific ne
 ## Conceptual Enterprise Architecture & Workflow
 
 The below describes an approach suitable for an enterprise setup that leverages Azure Functions and Azure SQL Database to fully automate the process of retrieving and storing capacity data from the Azure DevOps Capacities API. While this infrastructure is not implemented in this codebase, it serves as a conceptual approach that can be modified to fit your specific needs.
+
+Note that the data in this solution is point-in-time data, and should be routinely pulled and refreshed to ensure accuracy.
 
 ![Diagram](./docs/images/automated-solution.png)
 
