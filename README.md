@@ -25,6 +25,16 @@ The scenario presented in this codebase is not intended for production use, and 
 
 ## Running this sample
 
+#### Modifying `app.py` to modify for your use case
+
+- In the `generate_snapshot` function...
+
+#### Authentication to Azure DevOps
+
+- One of the parameters to `generate_snapshot` function is a personal access token (PAT), which is used to authenticate with the REST API. The PAT must have the `Work Items (read)` and `Work Items (read and write)` scopes enabled.
+- This codebase reads the PAT from an environment variable named `PAT`. Depending on your runtime environment, there may be more secure ways to store the PAT, such as using [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview).
+- Your PAT will work within Organization. If you have
+
 ## Conceptual Enterprise Architecture & Workflow
 
 The below describes an approach suitable for an enterprise setup that leverages Azure Functions and Azure SQL Database to fully automate the process of retrieving and storing capacity data from the Azure DevOps Capacities API. While this infrastructure is not implemented in this codebase, it serves as a conceptual approach that can be modified to fit your specific needs.
