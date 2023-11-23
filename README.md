@@ -19,7 +19,7 @@ The scenario presented in this codebase is not intended for production use, and 
 ## Prerequisites
 
 - [An Azure DevOps Organization and Project](https://learn.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops&tabs=microsoft-account)
-  - Within your Project, you will need to create a [Team](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/add-teams?view=azure-devops&tabs=preview-page) and a [Sprint](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/set-iteration-paths-sprints?view=azure-devops&tabs=browser), and then begin to assign hours to team members by setting [Capacity per day](https://learn.microsoft.com/en-us/azure/devops/boards/sprints/set-capacity?view=azure-devops#capacity-per-day-entries) and entering entering estimated hours at the task level.
+  - Within your Project, you will need to create a [Team](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/add-teams?view=azure-devops&tabs=preview-page) and a [Sprint](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/set-iteration-paths-sprints?view=azure-devops&tabs=browser), and then begin to assign hours to team members by setting [Capacity per day](https://learn.microsoft.com/en-us/azure/devops/boards/sprints/set-capacity?view=azure-devops#capacity-per-day-entries) and entering estimated hours at the task level.
 - [Power BI](https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop)
   - [Optional - Power BI License](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-license) - for publishing reports to Power BI Service
 - [Python](https://www.python.org/downloads/)
@@ -45,7 +45,7 @@ This sample assumes you are running the code and viewing the report locally.
 #### Modifying `app.py` to modify for your use case
 
 - In the `generate_snapshot` function, there is a block of code that identifies tasks as being work items with a parent from which to pull assigned hours. You can modify this block of code to fit your specific needs/work item type/DevOps process you are using.
-- The `main` function shows an example of how to call the `generate_snapshot` function for multiple parameter sets. Assuming that the code to pull the data is automated, you may opt to further parameterize the script to to allow for more flexibility how the parameters are passed in (e.g., from a querystring).
+- The `main` function shows an example of how to call the `generate_snapshot` function for multiple parameter sets. Assuming that the code to pull the data is automated, you may opt to further parameterize the script to allow for more flexibility how the parameters are passed in (e.g., from a querystring).
 - Additional code to connect to a database and store the data is not included in this codebase - outputs are simply written to a CSV. Code to connect to a database can be added as part of an enterprise solution.
 
 Note that this codebase will likely require modification to fit your specific needs, and requires sufficient testing to ensure expected results behavior.
