@@ -19,13 +19,15 @@ The scenario presented in this codebase is not intended for production use, and 
 ## Prerequisites
 
 - [An Azure DevOps Organization and Project](https://learn.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops&tabs=microsoft-account)
+  - Within your Project, you will need to create a Team and a Sprint, and then begin to assign hours to team members by setting [Capacity per day](https://learn.microsoft.com/en-us/azure/devops/boards/sprints/set-capacity?view=azure-devops#capacity-per-day-entries) and entering entering estimated hours at the task level.
 - [Power BI](https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop)
+  - [Optional - Power BI License](https://learn.microsoft.com/en-us/power-bi/consumer/end-user-license) - for publishing reports to Power BI Service
 - [Python](https://www.python.org/downloads/)
 - [Optional - Azure Subscription](https://azure.microsoft.com/en-us/free/) - for building enterprise solution
 
 ## Running this sample
 
-This sample assumes you are running the code locally.
+This sample assumes you are running the code and viewing the report locally.
 
 1. Create a [Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows) in Azure DevOps with the `Work Items (read)` and `Work Items (read and write)` scopes.
 2. Set an environment variable named `AZDO_PAT` with the value of your Personal Access Token.
@@ -43,9 +45,8 @@ This sample assumes you are running the code locally.
 
 #### Authentication to Azure DevOps
 
-- One of the parameters to `generate_snapshot` function is a personal access token (PAT), which is used to authenticate with the REST API. The PAT must have the `Work Items (read)` and `Work Items (read and write)` scopes enabled.
 - This codebase reads the PAT from an environment variable named `AZDO_PAT`. Depending on your runtime environment, there could be more ideal ways to store the PAT, such as using [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview).
-- Your PAT will work within Organization. If you have multiple organizations, you will need to generate a PAT for each one.
+- Your PAT will work within an Organization. If you have multiple organizations, you will need to generate a PAT for each one.
 
 ## Conceptual Enterprise Architecture & Workflow
 
