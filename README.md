@@ -38,9 +38,9 @@ This sample assumes you are running the code and viewing the report locally.
 7. Import the CSV file into Power BI and visualize the data.
 
    - You may build a dashboard that meets your specific needs, but some ideas to include in your dashboard include:
-   - A gauge chart that displays the currently assigned hours against the remaining hours in the sprint.
-   - A row-selectable table which shows Sprints, Teams, and Organizations in the data model, so you can choose to filter the dashboard down to a any level of granularity and view how fully utilized Sprints, Teams, and Organizations are.
-   - A row-selectable table showing the currently assigned hours for each team member in the data model, so you can choose to filter the dashboard down to the user level across Teams/Organizations.
+     - A gauge chart that displays the currently assigned hours against the remaining hours in the sprint.
+     - A row-selectable table which shows Sprints, Teams, and Organizations in the data model, so you can choose to filter the dashboard down to any level of granularity and view how fully utilized Sprints, Teams, and Organizations are.
+     - A row-selectable table showing the currently assigned hours for each team member in the data model, so you can choose to filter the dashboard down to the user level across Teams/Organizations.
 
 #### Modifying `app.py` to modify for your use case
 
@@ -48,7 +48,7 @@ This sample assumes you are running the code and viewing the report locally.
 - The `main` function shows an example of how to call the `generate_snapshot` function for multiple parameter sets. Assuming that the code to pull the data is automated, you may opt to further parameterize the script to allow for more flexibility how the parameters are passed in (e.g., from a querystring).
 - Additional code to connect to a database and store the data is not included in this codebase - outputs are simply written to a CSV. Code to connect to a database can be added as part of an enterprise solution.
 
-Note that this codebase will likely require modification to fit your specific needs, and requires sufficient testing to ensure expected results behavior. Areas in the codebase that may require modification are called out with TODO comments.
+Note that this codebase will likely require modification to fit your specific needs, and requires sufficient testing to ensure expected behavior. Areas in the codebase that may require modification are called out with TODO comments.
 
 #### Authentication to Azure DevOps
 
@@ -63,7 +63,7 @@ Note that the data in this solution is point-in-time data, and should be routine
 
 ![Diagram](./docs/images/automated-solution.png)
 
-1. An Azure Function is triggered on a schedule (e.g. daily) to retrieve capacity data from the Azure DevOps Capacities API.
+1. An Azure Function is triggered (e.g., on a daily schedule or manually) to retrieve capacity data from the Azure DevOps Capacities API using the PAT stored in Azure Key Vault.
 2. The Azure Function stores the capacity data in an Azure SQL Database.
 3. A published Power BI report is connected to the Azure SQL Database and visualizes the refreshed capacity data.
 
